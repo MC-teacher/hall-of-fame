@@ -30,23 +30,18 @@
     font-family: 'Noto Sans KR', sans-serif;
   }
 
-  /* ─── SCANLINES ─── */
   body::before {
     content: '';
     position: fixed;
     inset: 0;
     background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 3px,
-      rgba(0,0,0,0.08) 3px,
-      rgba(0,0,0,0.08) 4px
+      0deg, transparent, transparent 3px,
+      rgba(0,0,0,0.08) 3px, rgba(0,0,0,0.08) 4px
     );
     pointer-events: none;
     z-index: 9999;
   }
 
-  /* ─── VIGNETTE ─── */
   body::after {
     content: '';
     position: fixed;
@@ -56,7 +51,6 @@
     z-index: 9998;
   }
 
-  /* ─── HEADER ─── */
   #header {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -70,11 +64,7 @@
     z-index: 100;
   }
 
-  .header-left {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-  }
+  .header-left { display: flex; align-items: center; gap: 18px; }
 
   .trophy-icon {
     font-size: 42px;
@@ -103,18 +93,13 @@
     text-transform: uppercase;
   }
 
-  .header-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 4px;
-  }
+  .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
 
   .live-badge {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(220, 38, 38, 0.15);
+    background: rgba(220,38,38,0.15);
     border: 1px solid rgba(220,38,38,0.5);
     border-radius: 20px;
     padding: 5px 14px;
@@ -136,14 +121,8 @@
     50% { opacity: 0.4; transform: scale(0.8); }
   }
 
-  #clock {
-    font-size: 13px;
-    color: var(--muted);
-    font-variant-numeric: tabular-nums;
-    letter-spacing: 1px;
-  }
+  #clock { font-size: 13px; color: var(--muted); letter-spacing: 1px; }
 
-  /* ─── BOTTOM TICKER ─── */
   #ticker {
     position: fixed;
     bottom: 0; left: 0; right: 0;
@@ -171,13 +150,7 @@
     border-right: 2px solid rgba(255,255,255,0.2);
   }
 
-  .ticker-track {
-    flex: 1;
-    overflow: hidden;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
+  .ticker-track { flex: 1; overflow: hidden; height: 100%; display: flex; align-items: center; }
 
   .ticker-inner {
     display: flex;
@@ -197,7 +170,6 @@
 
   .ticker-item::before { content: '⭐ '; }
 
-  /* ─── MAIN STAGE ─── */
   #stage {
     position: fixed;
     inset: 90px 0 48px 0;
@@ -205,7 +177,6 @@
     flex-direction: column;
   }
 
-  /* ─── MAIN VIDEO ─── */
   #main-display {
     flex: 1;
     position: relative;
@@ -216,18 +187,11 @@
     overflow: hidden;
   }
 
-  #main-video {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-  }
+  #main-video { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-  /* Video overlay info */
   .video-overlay {
     position: absolute;
-    bottom: 0;
-    left: 0; right: 0;
+    bottom: 0; left: 0; right: 0;
     background: linear-gradient(transparent, rgba(0,0,0,0.85));
     padding: 40px 40px 24px;
     display: flex;
@@ -236,31 +200,9 @@
     pointer-events: none;
   }
 
-  .video-title-block {}
-
-  .video-number {
-    font-size: 12px;
-    color: var(--gold);
-    letter-spacing: 3px;
-    font-weight: 700;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-  }
-
-  .video-name {
-    font-family: 'Black Han Sans', sans-serif;
-    font-size: 36px;
-    color: #fff;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.8);
-    letter-spacing: 2px;
-  }
-
-  .video-stars {
-    font-size: 22px;
-    letter-spacing: 4px;
-    margin-top: 6px;
-    filter: drop-shadow(0 0 6px rgba(255,215,0,0.8));
-  }
+  .video-number { font-size: 12px; color: var(--gold); letter-spacing: 3px; font-weight: 700; margin-bottom: 6px; }
+  .video-name { font-family: 'Black Han Sans', sans-serif; font-size: 36px; color: #fff; text-shadow: 0 2px 20px rgba(0,0,0,0.8); letter-spacing: 2px; }
+  .video-stars { font-size: 22px; letter-spacing: 4px; margin-top: 6px; filter: drop-shadow(0 0 6px rgba(255,215,0,0.8)); }
 
   .video-badge {
     background: linear-gradient(135deg, var(--gold-dark), var(--gold));
@@ -275,7 +217,6 @@
     box-shadow: 0 4px 20px rgba(255,215,0,0.4);
   }
 
-  /* Progress bar */
   #progress-bar-container {
     position: absolute;
     bottom: 0; left: 0; right: 0;
@@ -290,7 +231,6 @@
     width: 0%;
   }
 
-  /* ─── THUMBNAIL RAIL ─── */
   #rail {
     height: 130px;
     background: var(--surface);
@@ -316,8 +256,7 @@
   }
 
   .thumb video {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     object-fit: cover;
     opacity: 0.7;
     transition: opacity 0.3s;
@@ -346,9 +285,7 @@
     text-align: center;
   }
 
-  .thumb.active .thumb-label {
-    color: var(--gold);
-  }
+  .thumb.active .thumb-label { color: var(--gold); }
 
   .thumb-number {
     position: absolute;
@@ -356,13 +293,11 @@
     font-size: 10px;
     color: var(--gold);
     font-weight: 700;
-    letter-spacing: 1px;
     background: rgba(0,0,0,0.6);
     padding: 2px 6px;
     border-radius: 3px;
   }
 
-  /* ─── TRANSITION OVERLAY ─── */
   #transition-overlay {
     position: fixed;
     inset: 0;
@@ -375,22 +310,14 @@
     justify-content: center;
     flex-direction: column;
     gap: 16px;
+    transition: opacity 0.3s;
   }
 
-  #transition-overlay.active {
-    opacity: 1;
-    pointer-events: all;
-  }
+  #transition-overlay.active { opacity: 1; pointer-events: all; }
 
   .transition-trophy {
     font-size: 64px;
-    animation: spin 0.8s ease-in-out;
     filter: drop-shadow(0 0 30px rgba(255,215,0,0.9));
-  }
-
-  @keyframes spin {
-    0% { transform: scale(0) rotate(-180deg); }
-    100% { transform: scale(1) rotate(0deg); }
   }
 
   .transition-text {
@@ -399,16 +326,8 @@
     color: var(--gold);
     letter-spacing: 3px;
     text-shadow: 0 0 30px rgba(255,215,0,0.8);
-    opacity: 0;
-    animation: fadeInUp 0.5s 0.3s forwards;
   }
 
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ─── GOLD STARS PARTICLE ─── */
   .star-particle {
     position: fixed;
     pointer-events: none;
@@ -425,50 +344,36 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <div id="header">
   <div class="header-left">
     <div class="trophy-icon">🏆</div>
     <div class="header-title">
       <h1>수행평가 명예의 전당</h1>
-      <p>Hall of Excellence · Student Works · 2026</p>
+      <p>Hall of Excellence · Student Works · 2025</p>
     </div>
   </div>
   <div class="header-right">
-    <div class="live-badge">
-      <div class="live-dot"></div>
-      LIVE
-    </div>
+    <div class="live-badge"><div class="live-dot"></div>LIVE</div>
     <div id="clock">--:--:--</div>
   </div>
 </div>
 
-<!-- MAIN STAGE -->
 <div id="stage">
   <div id="main-display">
     <video id="main-video" autoplay muted playsinline></video>
-
     <div class="video-overlay">
       <div class="video-title-block">
         <div class="video-number" id="video-number">NO. 1 / 6</div>
         <div class="video-name" id="video-name">작품명</div>
         <div class="video-stars">⭐⭐⭐⭐⭐</div>
       </div>
-      <div class="video-badge">
-        우수작품<br>선정
-      </div>
+      <div class="video-badge">우수작품<br>선정</div>
     </div>
-
-    <div id="progress-bar-container">
-      <div id="progress-bar"></div>
-    </div>
+    <div id="progress-bar-container"><div id="progress-bar"></div></div>
   </div>
-
-  <!-- THUMBNAIL RAIL -->
-  <div id="rail" id="thumbnail-rail"></div>
+  <div id="rail"></div>
 </div>
 
-<!-- BOTTOM TICKER -->
 <div id="ticker">
   <div class="ticker-label">📢 명예의 전당</div>
   <div class="ticker-track">
@@ -476,7 +381,6 @@
   </div>
 </div>
 
-<!-- TRANSITION OVERLAY -->
 <div id="transition-overlay">
   <div class="transition-trophy">🏆</div>
   <div class="transition-text" id="transition-text">다음 작품</div>
@@ -484,12 +388,12 @@
 
 <script>
 const videos = [
-  { file: '_sl_시계.mov',     name: '시계',   type: 'video/mp4' },
-  { file: '_sl_배구.webm',    name: '배구',   type: 'video/webm' },
-  { file: '_sl_물개.mp4',     name: '물개',   type: 'video/mp4' },
-  { file: '_sl_짱구.mov',     name: '짱구',   type: 'video/mp4' },
-  { file: '_sl_카메라.mov',   name: '카메라', type: 'video/mp4' },
-  { file: '_sl_물병영상.webm',name: '물병',   type: 'video/webm' },
+  { file: 'sikye.mp4',    name: '시계',   type: 'video/mp4' },
+  { file: 'baegu.webm',   name: '배구',   type: 'video/webm' },
+  { file: 'mulge.mp4',    name: '물개',   type: 'video/mp4' },
+  { file: 'jjangu.mp4',   name: '짱구',   type: 'video/mp4' },
+  { file: 'kamera.mp4',   name: '카메라', type: 'video/mp4' },
+  { file: 'mulbyung.webm',name: '물병',   type: 'video/webm' },
 ];
 
 let currentIndex = 0;
@@ -500,7 +404,6 @@ const rail = document.getElementById('rail');
 const overlay = document.getElementById('transition-overlay');
 const tickerInner = document.getElementById('ticker-inner');
 
-// Build thumbnails
 videos.forEach((v, i) => {
   const thumb = document.createElement('div');
   thumb.className = 'thumb' + (i === 0 ? ' active' : '');
@@ -508,13 +411,12 @@ videos.forEach((v, i) => {
 
   const numEl = document.createElement('div');
   numEl.className = 'thumb-number';
-  numEl.textContent = `No.${i + 1}`;
+  numEl.textContent = 'No.' + (i + 1);
 
   const vid = document.createElement('video');
   vid.src = v.file;
   vid.muted = true;
   vid.preload = 'metadata';
-  vid.loop = false;
 
   const label = document.createElement('div');
   label.className = 'thumb-label';
@@ -523,36 +425,23 @@ videos.forEach((v, i) => {
   thumb.appendChild(numEl);
   thumb.appendChild(vid);
   thumb.appendChild(label);
-  thumb.addEventListener('click', () => switchTo(i, true));
-  rail.appendChild(thumb);
-
-  // Hover preview
+  thumb.addEventListener('click', () => switchTo(i));
   thumb.addEventListener('mouseenter', () => { if (i !== currentIndex) vid.play(); });
   thumb.addEventListener('mouseleave', () => { vid.pause(); vid.currentTime = 0; });
+  rail.appendChild(thumb);
 });
 
-// Build ticker
-const tickerMessages = [
-  ...videos.map(v => `${v.name} — 수행평가 우수작품 선정`),
+const msgs = [
+  ...videos.map(v => v.name + ' — 수행평가 우수작품 선정'),
   '이 작품들은 학생들의 창의력과 노력의 결실입니다',
   '수고한 모든 학생들에게 박수를',
   '명예의 전당에 영원히 기록됩니다',
 ];
-const tickerContent = [...tickerMessages, ...tickerMessages]
-  .map(msg => `<span class="ticker-item">${msg}</span>`)
-  .join('');
-tickerInner.innerHTML = tickerContent;
+const content = [...msgs, ...msgs].map(m => '<span class="ticker-item">' + m + '</span>').join('');
+tickerInner.innerHTML = content;
 
 function updateThumbs() {
-  document.querySelectorAll('.thumb').forEach((t, i) => {
-    t.classList.toggle('active', i === currentIndex);
-  });
-}
-
-function updateInfo(index) {
-  const v = videos[index];
-  document.getElementById('video-number').textContent = `No. ${index + 1} / ${videos.length}`;
-  document.getElementById('video-name').textContent = v.name;
+  document.querySelectorAll('.thumb').forEach((t, i) => t.classList.toggle('active', i === currentIndex));
 }
 
 function spawnStars() {
@@ -568,56 +457,39 @@ function spawnStars() {
   }
 }
 
-function switchTo(index, manual = false) {
+function switchTo(index) {
   if (isTransitioning) return;
   isTransitioning = true;
-
   const v = videos[index];
-  const transText = document.getElementById('transition-text');
-  transText.textContent = `${v.name}`;
-
+  document.getElementById('transition-text').textContent = v.name;
   overlay.classList.add('active');
   spawnStars();
-
   setTimeout(() => {
     currentIndex = index;
     mainVideo.src = v.file;
     mainVideo.load();
     mainVideo.play().catch(() => {});
-    updateInfo(index);
+    document.getElementById('video-number').textContent = 'No. ' + (index + 1) + ' / ' + videos.length;
+    document.getElementById('video-name').textContent = v.name;
     updateThumbs();
-
-    setTimeout(() => {
-      overlay.classList.remove('active');
-      isTransitioning = false;
-    }, 600);
+    setTimeout(() => { overlay.classList.remove('active'); isTransitioning = false; }, 600);
   }, 900);
 }
 
-// Progress bar
 mainVideo.addEventListener('timeupdate', () => {
   if (mainVideo.duration) {
-    const pct = (mainVideo.currentTime / mainVideo.duration) * 100;
-    progressBar.style.width = pct + '%';
+    progressBar.style.width = (mainVideo.currentTime / mainVideo.duration * 100) + '%';
   }
 });
 
-// Auto-advance
 mainVideo.addEventListener('ended', () => {
-  const next = (currentIndex + 1) % videos.length;
-  switchTo(next);
+  switchTo((currentIndex + 1) % videos.length);
 });
 
-// Clock
-function updateClock() {
-  const now = new Date();
-  document.getElementById('clock').textContent =
-    now.toLocaleTimeString('ko-KR', { hour12: false });
-}
-setInterval(updateClock, 1000);
-updateClock();
+setInterval(() => {
+  document.getElementById('clock').textContent = new Date().toLocaleTimeString('ko-KR', { hour12: false });
+}, 1000);
 
-// Start
 switchTo(0);
 </script>
 </body>
